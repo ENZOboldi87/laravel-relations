@@ -14,14 +14,14 @@ class CreateSongsTable extends Migration
     public function up()
     {
         Schema::create('songs', function (Blueprint $table) {
-          $table->id();
-          $table->string('title');
-          $table->string('genre');
-          $table->unsignedBigInteger('album_id');
-          $table->foreign('album_id')
-                ->references('id')
-                ->on('albums');
-          $table->timestamps();
+            $table->id();
+            $table->string('song');
+            $table->time('duration');
+            $table->unsignedBigInteger('album_id');
+            $table->foreign('album_id')
+                  ->references('id')
+                  ->on('albums');
+            $table->timestamps();
         });
     }
 

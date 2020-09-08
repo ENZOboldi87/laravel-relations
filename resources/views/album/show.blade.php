@@ -6,6 +6,6 @@
 
 <ul>
   @foreach ($album->songs as $song)
-  <li>{{ $song->title }}</li>  
+  <li>{{ $song->title }}</li>
   @endforeach
 </ul>
