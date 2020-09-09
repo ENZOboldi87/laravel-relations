@@ -10,7 +10,7 @@ class Artist extends Model
     'artist',
   ];
 
-  public function artist() {
+  public function album() {
     return $this->hasMany('App\Album');
   }
 }

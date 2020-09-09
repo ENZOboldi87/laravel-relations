@@ -5,7 +5,7 @@
 <ul>
   @foreach ($albums as $album)
     <li>Title:
-      <a href="{{route('album.show', $album)}}">{{$album->title}}</a>
+      <a href="{{route('album.show', $album)}}">{{$album->album}}</a>
     </li>
   @endforeach
 </ul>

@@ -19,4 +19,8 @@ class Album extends Model
     public function artist() {
       return $this->belongsTo('App\Artist');
     }
+
+    public function images() {
+      return $this->belongsTo('App\Image');
+    }
 }

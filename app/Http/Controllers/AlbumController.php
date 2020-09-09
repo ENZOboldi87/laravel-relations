@@ -14,9 +14,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::all();
-
-        return view ('album.index', compact ('albums'));
+      $albums = Album::all();
+      
+        return view('album.index', compact('albums'));
     }
 
     /**
@@ -48,7 +48,6 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-      // dd($album);
         return view ('album.show', compact('album'));
     }
 
