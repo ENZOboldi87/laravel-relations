@@ -10,33 +10,29 @@
   </div>
 </div>
 <div class="container-fluid">
-  
-
+  <div class="d-flex flex-row justify-content-center">
+    @foreach ($artists as $artist)
+      <div class="p-2">{{$artist->artist}}
+        <div class="d-flex flex-column justify-content-center">
+          @foreach ($artist->album as $album)
+          <div class="p-2">
+            <a href="{{route('albums.show', $album)}}">{{$album->album}}</a>
+          </div>
+          @endforeach
+        </div>
+      </div>
+        @endforeach
+      </div>
+  </div>
 </div>
 
-<ul>
+{{-- <ul>
   @foreach ($artists as $artist)
-    <li>Nome Artista:{{$artist->artist}}
+    <li>{{$artist->artist}}</li>
+    <ul>
       @foreach ($artist->album as $album)
-        <li>
-          <a href="{{route('albums.show', $album)}}">{{$album->album}}</a>
-        </li>
+        <li><a href="{{route('albums.show', $album)}}">{{$album->album}}</a></li>
       @endforeach
-    </li>
-
-
-  <hr>
+    </ul>
   @endforeach
-</ul>
-
-@foreach ($artists as $artist)
-<div class="">
-    {{$artist->artist}}
-    @foreach ($artist->album as $album)
-    <div class="">
-      <p>{{$album->album}}</p>
-    </div>
-    @endforeach
-</div>
-
-@endforeach
+</ul> --}}

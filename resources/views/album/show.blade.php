@@ -1,8 +1,10 @@
-<h2>{{$album->album}}</h2>
+{{-- <h2>{{$album->album}}</h2>
 
 <p>{{ $album->artist}}</p>
 
-<p>{{$album->year}}</p>
+<p>{{$album->year}}</p> --}}
+
+<h1>{{$album->album}}</h1>
 
 <ul>
   @foreach ($album->songs as $song)

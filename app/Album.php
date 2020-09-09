@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     protected $fillable = [
-      'title',
-      'artist',
-      'year'
+      'album',
+      'year',
+      'genre',
+      'artist_id',
+      'image_id'
     ];
 
     public function songs() {
@@ -20,7 +22,7 @@ class Album extends Model
       return $this->belongsTo('App\Artist');
     }
 
-    public function images() {
+    public function image() {
       return $this->belongsTo('App\Image');
     }
 }

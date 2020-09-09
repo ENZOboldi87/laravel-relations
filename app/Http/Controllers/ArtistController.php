@@ -15,4 +15,6 @@ class ArtistController extends Controller
     return view('artist.index', compact('artists'));
   }
 
+
+
 }
