@@ -13,12 +13,24 @@ class AlbumsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 3; $i++) {
-          $new_album = new Album();
-          $new_album->title = $faker->word;
-          $new_album->artist = $faker->name;
-          $new_album->year = $faker->year();
-          $new_album->save();
+        for ($i=0; $i < 6; $i++) {
+          for ($j=0; $j < 4; $j++) {
+            $new_album = new Album();
+            $new_album->album = $faker->randomElement([
+              'Bleach', 'Nevermind', 'In Utero', 'Sap',
+              'Dirt', 'Unplugged', 'Black Gives Way To Blue',
+              'Wasting Light', 'Concrete and Gold', 'Harvest',
+              'Holy Diver', 'Ten', 'Gigaton', 'Backspacer', 'Riot Act',
+              'Binatural', 'Yield', 'No Code', 'Vs.', 'Badmotorfinger',
+              'Superunknown', 'Louder Than Love', 'Jar Of Flies',
+              'Dirt'
+            ]);
+            $new_album->artist_id = $i + 1;
+            $new_album->genre = $faker->word;
+            $new_album->year = $faker->year();
+            $new_album->save();
+          }
+
         }
     }
 }

@@ -13,20 +13,11 @@ class SongsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 3; $i++) {
-          for ($j=0; $j < 8; $j++) {
+        for ($i=0; $i < 24; $i++) {
+          for ($j=0; $j < 9; $j++) {
             $new_song = new Song();
-            $new_song->title = $faker->name;
-            $new_song->genre = $faker->randomElement([
-              'rock',
-              'jazz',
-              'blues',
-              'country',
-              'reggae',
-              'classic',
-              'metal',
-              'indie'
-            ]);
+            $new_song->song = $faker->text(20);
+            $new_song->duration = $faker->time();
             $new_song->album_id = $i + 1;
             $new_song->save();
           }
