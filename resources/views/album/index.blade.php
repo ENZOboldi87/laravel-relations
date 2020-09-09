@@ -1,4 +1,6 @@
-<h1>Qui trovi tutti gli album</h1>
+@extends('layouts.layouts')
+
+<h1 class="">Qui trovi tutti gli album</h1>
 
 <ul>
   @foreach ($albums as $album)
