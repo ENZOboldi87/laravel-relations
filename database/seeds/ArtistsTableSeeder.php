@@ -15,15 +15,13 @@ class ArtistsTableSeeder extends Seeder
      {
          for ($i=0; $i < 6; $i++) {
              $new_artist = new Artist();
-             $new_artist->artist = $faker->randomElement([
+             $new_artist->name = $faker->randomElement([
                'Nirvana',
                'Soundgarden',
                'Pearl Jam',
-               'Stone Temple Pilots',
                'Audioslave',
                'Temple Of The Dogs',
                'Alice In Chains',
-               'Mad Season'
              ]);
              $new_artist->save();
          }

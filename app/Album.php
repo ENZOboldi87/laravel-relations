@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     protected $fillable = [
-      'album',
+      'title',
       'year',
-      'genre',
       'artist_id',
       'image_id'
     ];
@@ -23,6 +22,6 @@ class Album extends Model
     }
 
     public function image() {
-      return $this->hasOne('App\Image');
+      return $this->belongsTo('App\Image');
     }
 }

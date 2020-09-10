@@ -16,7 +16,7 @@ class AlbumsTableSeeder extends Seeder
         for ($i=0; $i < 6; $i++) {
           for ($j=0; $j < 4; $j++) {
             $new_album = new Album();
-            $new_album->album = $faker->randomElement([
+            $new_album->title = $faker->randomElement([
               'Bleach', 'Nevermind', 'In Utero', 'Sap',
               'Dirt', 'Unplugged', 'Black Gives Way To Blue',
               'Wasting Light', 'Concrete and Gold', 'Harvest',
@@ -26,7 +26,7 @@ class AlbumsTableSeeder extends Seeder
               'Dirt'
             ]);
             $new_album->artist_id = $i + 1;
-            $new_album->genre = $faker->word;
+            $new_album->image_id = $j + 1;
             $new_album->year = $faker->year();
             $new_album->save();
           }

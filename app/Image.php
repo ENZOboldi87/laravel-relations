@@ -8,11 +8,10 @@ class Image extends Model
 {
   protected $fillable = [
     'url',
-    'album_id',
   ];
 
   public function album() {
-    return $this->belongsTo('App\Album');
+    return $this->hasOne('App\Album');
   }
 
 
