@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Artist;
 use App\Album;
 use App\Image;
+use App\Song;
 
 class AlbumController extends Controller
 {
@@ -53,10 +54,10 @@ class AlbumController extends Controller
     public function show(Album $album)
     {
       // $artists = Artist::all();
-      // dd($artists);
+      // dd($album->artist);
 
       // dd($album[1]->artist->name);
-        return view ('albums.show', compact('album'));
+        return view ('artists/albums.show', compact('album'));
     }
 
     /**
