@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 
-<div class="container">
+{{-- <div class="container">
   <div class="row">
     <div class="col-lg-12">
       <div class="title-page">
@@ -12,17 +12,33 @@
 <div class="container-fluid">
   <div class="d-flex flex-row justify-content-center">
     @foreach ($artists as $artist)
-      <div class="p-2"> <a href="{{route('albums.index', $artist)}}">
+      <div class="p-2"> <a href="{{route('albums.show', $artist)}}">
         {{$artist->name}}</a></div>
-        <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex flex-column justify-content-center"> --}}
           {{-- @foreach ($artist->title as $album)
           <div class="p-2">
             {{-- <a href="{{route('album.show', $album)}}">{{$album->album}}</a> --}}
-          </div>
+          {{-- </div>
           {{-- @endforeach --}}
-        </div>
+        {{-- </div>
       </div>
-        @endforeach
-      </div>
+        @endforeach --}}
+      {{-- </div> --}}
   {{-- </div>
 </div> --}}
+
+
+<h1>lista artisti</h1>
+
+@foreach ($artists as $artist)
+  <div>
+    <a href="{{route('artists.show', $artist)}}"><h2>{{$artist->name}}</h2></a>
+  </div>
+@endforeach
+  {{-- <ul>
+    @foreach ($artist->album as $album)
+      <li> {{$album->title}}
+        <img src="{{$album->image->url}}" alt="">
+      </li>
+    @endforeach
+  </ul> --}}

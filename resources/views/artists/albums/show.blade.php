@@ -12,4 +12,8 @@
   @endforeach
 </ul> --}}
 
-<h1>sono qui dentro</h1>
+<h1>nome album: {{$album->title}}</h1>
+<h2>dei{{$artists->name}}</h2>
+{{-- @foreach ($artist->albums as $album)
+  <h1>{{$album->title}}</h1>
+@endforeach --}}

@@ -14,8 +14,14 @@ class ArtistController extends Controller
 
     $artists = Artist::all();
     // dd($artists[1]->album->image_id);
+    // dd($album);
 
-    return view('artist.index', compact('artists'));
+    return view('artists.index', compact('artists'));
+  }
+
+  public function show(Artist $artist)
+  {
+    return view('artists.show', compact('artist'));
   }
 
 

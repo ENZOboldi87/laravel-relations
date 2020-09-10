@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('artist', 'ArtistController@index');
+Route::get('artists', 'ArtistController@index')->name('artists.index');
+
+Route::get('artists/{artist}', 'ArtistController@show')->name('artists.show');
 
 
 Route::resource('albums', 'AlbumController');

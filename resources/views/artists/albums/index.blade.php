@@ -1,15 +1,16 @@
 @extends('layouts.layouts')
 
-<h1 class="">Qui trovi tutti gli album</h1>
+{{-- <h1 class="">nome artista:{{$albums->artist->name}}</h1> --}}
+<h2>nome album:</h2>
 
-<ul>
+{{-- <ul> --}}
   {{-- @foreach ($albums as $album) --}}
-    <li>albums dei {{$artist->name}}
+    {{-- <li>albums dei {{$albums->title}} --}}
       {{-- {{$album->title}} --}}
       {{-- <img src="{{$album->image->url}}" alt=""> --}}
-    </li>
+    {{-- </li> --}}
   {{-- @endforeach --}}
-</ul>
+{{-- </ul> --}}
 
 
 {{-- <a href="{{route('album.show', $album)}}"></a> --}}
