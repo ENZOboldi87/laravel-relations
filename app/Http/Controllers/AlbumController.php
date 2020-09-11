@@ -31,7 +31,7 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($artist_id)
+    public function create()
     {
         $albums = Album::all();
         // dd($artist_id);
@@ -45,7 +45,7 @@ class AlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($artist_id, Request $request)
+    public function store(Request $request)
     {
       dd($artist_id);
       $request->validate($this->validationArtist());

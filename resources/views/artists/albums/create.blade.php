@@ -22,7 +22,7 @@
       </ul>
     </div>
   @endif
-  <form action="{{route('artists.albums.store', [$artist->artist_id, $album->id])}}" method="post">
+  <form action="{{route('artists.albums.store')}}" method="post">
     @csrf
     @method('POST')
     <label>Titolo</label>
