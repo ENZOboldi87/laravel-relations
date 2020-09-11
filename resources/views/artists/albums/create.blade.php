@@ -22,7 +22,9 @@
       </ul>
     </div>
   @endif
+  {{-- qua mi dice Missing required parameters per salvare, presumo sia l'id dell artista, ho provato varie vie ma non riesco --}}
   <form action="{{route('artists.albums.store')}}" method="post">
+    {{-- fine  --}}
     @csrf
     @method('POST')
     <label>Titolo</label>
