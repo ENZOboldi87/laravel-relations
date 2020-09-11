@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Artist;
-use App\Album;
-use App\Image;
 
-class ArtistController extends Controller
+class SongController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::all();
-        // dd($artists);
-        return view('artists.index', compact('artists'));
+        //
     }
 
     /**
@@ -48,10 +43,9 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Artist $artist)
+    public function show($id)
     {
-      // dd('sono qui');
-        return view('artists.albums.show', compact('artist'));
+        //
     }
 
     /**

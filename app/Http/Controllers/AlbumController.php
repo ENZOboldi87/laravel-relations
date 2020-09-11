@@ -15,13 +15,15 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($artist_id)
     {
-      $albums = Album::all();
-
-      dd($albums);
-      // dd($albums[1]->artist->name);
-      return view('albums.index', compact('albums'));
+      $albums = Album::where('artist_id', $artist_id)->get();
+      // $artist_name = Artist::get('name')->where('artist_id', $artist_id);
+      //
+      // dd($albums->$artist_name);
+      // // dd($albums[1]->songs);
+      // da qui devo risalire al nome 
+      return view('artists.albums.index', compact('albums', 'artist_id'));
     }
 
     /**
@@ -51,13 +53,9 @@ class AlbumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show($artist_id, Album $album)
     {
-      // $artists = Artist::all();
-      // dd($album->artist);
-
-      // dd($album[1]->artist->name);
-        return view ('artists/albums.show', compact('album'));
+        return view ('artists.albums.show', compact('artist_id', 'album'));
     }
 
     /**

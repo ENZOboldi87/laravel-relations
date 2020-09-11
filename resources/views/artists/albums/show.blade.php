@@ -25,20 +25,7 @@
       </div>
     </div>
   </div>
+  <a class="btn btn-primary" href="{{route('artists.albums.index', [$artist_id])}}" role="button">Torna indietro</a>
+
+  <a class="btn btn-primary" href="{{route('artists.index')}}" role="button">Torna alla Home</a>
 @endsection
-{{-- <h2>{{$album->album}}</h2>
-
-<p>{{ $album->artist}}</p>
-
-<p>{{$album->year}}</p> --}}
-{{--
-<h1>{{$album->album}}</h1>
-
-<ul>
-  @foreach ($album->songs as $song)
-  <li>{{ $song->song }}</li>
-  @endforeach
-</ul> --}}
-{{--
-<h1>nome album: {{$album->title}}</h1>
-<h2>dei {{$album->artist->name}}</h2> --}}

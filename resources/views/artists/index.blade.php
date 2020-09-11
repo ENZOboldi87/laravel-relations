@@ -16,7 +16,7 @@
   <div class="d-flex flex-row justify-content-center">
     @foreach ($artists as $artist)
       <div class="p-2">
-        <a href="{{route('artists.show', $artist)}}"><h2>{{$artist->name}}</h2></a>
+        <a href="{{route('artists.albums.index', $artist)}}"><h2>{{$artist->name}}</h2></a>
       </div>
     @endforeach
   </div>

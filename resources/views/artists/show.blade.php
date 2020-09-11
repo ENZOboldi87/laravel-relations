@@ -18,10 +18,11 @@
     @foreach ($artist->album as $album)
   <div class="p-2">
     <div class="">
-      <a href="{{route('albums.show', $album)}}"><img src="{{$album->image->url}}" alt="..." class="img-thumbnail"></a>
+      <a href="{{route('artists.albums.show', $album)}}"><img src="{{$album->image->url}}" alt="..." class="img-thumbnail"></a>
     </div>
-    <p class="text-center mb-0"><a href="{{route('albums.show', $album)}}">{{$album->title}}
-    </a></p>
+    <p class="text-center mb-0">{{$album->title}}
+    {{-- <a href="{{route('artists.albums.show', $album)}}"></a> --}}
+  </p>
     <div>
       <p class="text-center">{{$album->year}}</p>
     </div>
@@ -29,14 +30,5 @@
     @endforeach
   </div>
 </div>
+<a class="btn btn-primary" href="{{route('artists.index')}}" role="button">Torna Indietro</a>
 @endsection
-
-{{-- <div class="container-fluid">
-  <div class="d-flex flex-row justify-content-center">
-    @foreach ($artists as $artist)
-      <div class="p-2">
-        <a href="{{route('artists.show', $artist)}}"><h2>{{$artist->name}}</h2></a>
-      </div>
-    @endforeach
-  </div>
-</div> --}}
