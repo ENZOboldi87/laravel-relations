@@ -28,7 +28,8 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+      $artists = Artist::all();
+        return view('artists.createartist', compact('artists'));
     }
 
     /**
@@ -39,7 +40,12 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate($this->validationArtist());
+        $requested_data = $request->all();
+        $new_artist = new Artist();
+        $new_artist->name = $requested_data['name'];
+        $new_artist->save();
+        return redirect()->route('artists.index', $new_artist);
     }
 
     /**
@@ -86,5 +92,11 @@ class ArtistController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function validationArtist() {
+      return [
+        'name' => 'required|max:255',
+      ];
     }
 }

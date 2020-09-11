@@ -22,7 +22,7 @@
   </div>
 </div>
 
-
+<a class="btn btn-secondary" href="{{route('artists.create')}}" role="button">Inserisci Nuovo Artista</a>
 @endsection
 
 {{-- <div class="container">

@@ -22,7 +22,7 @@ class AlbumController extends Controller
       //
       // dd($albums->$artist_name);
       // // dd($albums[1]->songs);
-      // da qui devo risalire al nome 
+      // da qui devo risalire al nome
       return view('artists.albums.index', compact('albums', 'artist_id'));
     }
 
@@ -31,9 +31,12 @@ class AlbumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($artist_id)
     {
-        //
+        $albums = Album::all();
+        // dd($artist_id);
+
+        return view('artists.albums.create', compact ('albums'));
     }
 
     /**
@@ -42,9 +45,16 @@ class AlbumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($artist_id, Request $request)
     {
-        //
+      dd($artist_id);
+      $request->validate($this->validationArtist());
+      $requested_data = $request->all();
+      $new_album = new Album();
+      $new_album->title = $requested_data['title'];
+      $new_album->year = $requested_data['year'];
+      $new_album->save();
+      return redirect()->route('artists.index', $new_album);
     }
 
     /**
@@ -90,5 +100,12 @@ class AlbumController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function validationAlbum() {
+      return [
+        'title' => 'required|max:255',
+        'year' => 'required|integer',
+      ];
     }
 }

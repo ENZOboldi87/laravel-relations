@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="title-page">
-          <h1 class="text-center p-5">Hai selezionato 
+          <h1 class="text-center p-5">Hai selezionato
           </h1>
         </div>
       </div>
@@ -30,5 +30,6 @@
     @endforeach
   </div>
 </div>
+<a class="btn btn-secondary" href="{{route('artists.albums.create', [$artist_id])}}" role="button">Inserisci Nuovo Album</a>
 <a class="btn btn-primary" href="{{route('artists.index')}}" role="button">Torna Indietro</a>
 @endsection
