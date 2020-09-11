@@ -18,12 +18,9 @@ class AlbumController extends Controller
     public function index($artist_id)
     {
       $albums = Album::where('artist_id', $artist_id)->get();
-      // $artist_name = Artist::get('name')->where('artist_id', $artist_id);
-      //
-      // dd($albums->$artist_name);
-      // // dd($albums[1]->songs);
-      // da qui devo risalire al nome
-      return view('artists.albums.index', compact('albums', 'artist_id'));
+      $artist = Artist::find($artist_id);
+
+      return view('artists.albums.index', compact('albums', 'artist_id', 'artist'));
     }
 
     /**
@@ -34,7 +31,7 @@ class AlbumController extends Controller
     public function create()
     {
         $albums = Album::all();
-        // dd($artist_id);
+
 
         return view('artists.albums.create', compact ('albums'));
     }

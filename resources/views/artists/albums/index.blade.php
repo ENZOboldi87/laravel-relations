@@ -7,10 +7,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="title-page">
-          {{-- qui voglio visualizzare il nome dell artista ma riesco solo a risalire all id --}}
-          <h1 class="text-center p-5">Hai selezionato  {{$artist_id}}
-            {{-- fine --}}
-          </h1>
+          <h1 class="text-center p-5">Hai selezionato {{$artist->name}} </h1>
         </div>
       </div>
     </div>
